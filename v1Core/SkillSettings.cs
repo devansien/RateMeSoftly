@@ -2,6 +2,6 @@
 {
     class SkillSettings
     {
-        public static bool ShowLogo = true;
+        public static bool ShowLogo = false;
     }
 }

@@ -2,7 +2,7 @@
 {
     class SkillMetadata
     {
-        public const string Name = "CustomSkill";
-        public const string DbTablePrefix = "CustomSkill";
+        public const string Name = "Rate Me Softly";
+        public const string DbTablePrefix = "RateMeSoftly";
     }
 }
