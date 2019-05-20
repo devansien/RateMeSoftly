@@ -21,7 +21,6 @@
   
   <ItemGroup>
     <Folder Include="v1Core\d_Handlers\Custom\" />
-    <Folder Include="v1Core\g_Pages\" />
     <Folder Include="v1Core\h_Slots\" />
     <Folder Include="v1Core\i_Speeches\Ssml\" />
   </ItemGroup>
