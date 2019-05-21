@@ -78,7 +78,8 @@ namespace RateMeSoftly
                     response.Response.Reprompt.OutputSpeech = new PlainTextOutputSpeech { Text = reprompt };
             }
 
-            response.Response.ShouldEndSession = endSession;
+            //response.Response.ShouldEndSession = endSession;
+            response.Response.ShouldEndSession = null;
         }
 
         private string GetReprompt(string[] reprompts)

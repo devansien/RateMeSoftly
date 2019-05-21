@@ -8,7 +8,7 @@ namespace RateMeSoftly
 {
     class AplComponentManager
     {
-        public static TouchWrapper GetTouchWrappedItem(APLComponent component, params string[] args)
+        public static Container GetTouchWrappedItem(APLComponent component, params string[] args)
         {
             List<string> arguments = new List<string>();
 
@@ -27,7 +27,17 @@ namespace RateMeSoftly
             List<APLComponent> components = new List<APLComponent> { component };
             touchWrapper.Item = components;
 
-            return touchWrapper;
+            Container container = new Container
+            {
+                AlignSelf = Style.Center,
+                AlignItems = Style.Center,
+                JustifyContent = Style.Center,
+                Width = DisplayManager.GetWidth(0.2f),
+                Height = DisplayManager.GetMaxHeight(),
+                Items = new List<APLComponent> { touchWrapper }
+            };
+
+            return container;
         }
     }
 }

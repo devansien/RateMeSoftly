@@ -14,11 +14,20 @@ namespace RateMeSoftly
             Image happyFace = GetFace("https://s3.amazonaws.com/sonnar-rate-me-softly/04_happy.png");
             Image veryHappyFace = GetFace("https://s3.amazonaws.com/sonnar-rate-me-softly/05_veryhappy.png");
 
-            TouchWrapper verySadButton = AplComponentManager.GetTouchWrappedItem(verySadFace, "very_sad");
-            TouchWrapper sadButton = AplComponentManager.GetTouchWrappedItem(sadFace, "sad");
-            TouchWrapper neutralButton = AplComponentManager.GetTouchWrappedItem(neutralFace, "neutral");
-            TouchWrapper happyButton = AplComponentManager.GetTouchWrappedItem(happyFace, "heppy");
-            TouchWrapper veryHappyButton = AplComponentManager.GetTouchWrappedItem(veryHappyFace, "very_heppy");
+            Container verySadButton = AplComponentManager.GetTouchWrappedItem(verySadFace, "very_sad");
+            Container sadButton = AplComponentManager.GetTouchWrappedItem(sadFace, "sad");
+            Container neutralButton = AplComponentManager.GetTouchWrappedItem(neutralFace, "neutral");
+            Container happyButton = AplComponentManager.GetTouchWrappedItem(happyFace, "heppy");
+            Container veryHappyButton = AplComponentManager.GetTouchWrappedItem(veryHappyFace, "very_heppy");
+
+            Image background = new Image
+            {
+                Source = "https://s3.amazonaws.com/sonnar-media-player/shared/white_background.jpg",
+                Scale = ImageScale.BestFill,
+                Width = DisplayManager.GetMaxWidth(),
+                Height = DisplayManager.GetMaxHeight(),
+                Position = Style.Absolute
+            };
 
             Container container = new Container
             {
@@ -27,7 +36,7 @@ namespace RateMeSoftly
                 Height = DisplayManager.GetMaxHeight()
             };
 
-            container.Items = new List<APLComponent> { verySadButton, sadButton, neutralButton, happyButton, veryHappyButton };
+            container.Items = new List<APLComponent> { background, verySadButton, sadButton, neutralButton, happyButton, veryHappyButton };
             return container;
         }
 
@@ -37,8 +46,8 @@ namespace RateMeSoftly
             {
                 Source = source,
                 AlignSelf = Style.Center,
-                Width = DisplayManager.GetWidth(0.2f),
-                Height = DisplayManager.GetHeight(0.3f)
+                Width = DisplayManager.GetWidth(0.15f),
+                Height = DisplayManager.GetHeight(0.2f)
             };
         }
     }
