@@ -8,19 +8,26 @@ namespace RateMeSoftly
     {
         public static Container GetPage()
         {
-            Image verySadFace = GetFace("");
-            Image sadFace = GetFace("");
-            Image nuetralFace = GetFace("");
-            Image happyFace = GetFace("");
-            Image veryHappyFace = GetFace("");
+            Image verySadFace = GetFace("https://s3.amazonaws.com/sonnar-rate-me-softly/01_verysad.png");
+            Image sadFace = GetFace("https://s3.amazonaws.com/sonnar-rate-me-softly/02_sad.png");
+            Image neutralFace = GetFace("https://s3.amazonaws.com/sonnar-rate-me-softly/03_neutral.png");
+            Image happyFace = GetFace("https://s3.amazonaws.com/sonnar-rate-me-softly/04_happy.png");
+            Image veryHappyFace = GetFace("https://s3.amazonaws.com/sonnar-rate-me-softly/05_veryhappy.png");
+
+            TouchWrapper verySadButton = AplComponentManager.GetTouchWrappedItem(verySadFace, "very_sad");
+            TouchWrapper sadButton = AplComponentManager.GetTouchWrappedItem(sadFace, "sad");
+            TouchWrapper neutralButton = AplComponentManager.GetTouchWrappedItem(neutralFace, "neutral");
+            TouchWrapper happyButton = AplComponentManager.GetTouchWrappedItem(happyFace, "heppy");
+            TouchWrapper veryHappyButton = AplComponentManager.GetTouchWrappedItem(veryHappyFace, "very_heppy");
 
             Container container = new Container
             {
+                Direction = Style.Row,
                 Width = DisplayManager.GetMaxWidth(),
                 Height = DisplayManager.GetMaxHeight()
             };
 
-            container.Items = new List<APLComponent> { verySadFace, sadFace, nuetralFace, happyFace, veryHappyFace };
+            container.Items = new List<APLComponent> { verySadButton, sadButton, neutralButton, happyButton, veryHappyButton };
             return container;
         }
 

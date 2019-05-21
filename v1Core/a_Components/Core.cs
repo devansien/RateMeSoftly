@@ -20,7 +20,6 @@ namespace RateMeSoftly
         protected static Database Database;
 
         protected static RequestManager RequestManager;
-        protected static MenuItemManager MenuItemManager;
 
 
         public async Task Init(APLSkillRequest request, ILambdaContext context)
@@ -44,7 +43,6 @@ namespace RateMeSoftly
             Response = new Response();
             Database = new Database(userId);
             RequestManager = new RequestManager();
-            MenuItemManager = new MenuItemManager();
         }
 
         private async Task SetState()

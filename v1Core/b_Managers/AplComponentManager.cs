@@ -20,7 +20,8 @@ namespace RateMeSoftly
                 OnPress = new SendEvent
                 {
                     Arguments = arguments
-                }
+                },
+                AlignSelf = Style.Center
             };
 
             List<APLComponent> components = new List<APLComponent> { component };
