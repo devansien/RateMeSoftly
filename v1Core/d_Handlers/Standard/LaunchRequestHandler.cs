@@ -13,8 +13,8 @@ namespace RateMeSoftly
                     State.NumPlayed++;
                     State.NumPrompted = 0;
 
-                    Response.SetDirectives(DirectiveManager.GetRenderDirective("RateMe", string.Empty, a_RateMePage.GetPage()));
-                    Response.SetSpeech(false, false, "Welcome, rate me baby. ", "Welcome, rate me baby baby. ");
+                    Response.SetDirectives(DirectiveManager.GetRenderDirective("RateMePage", string.Empty, a_RateMePage.GetPage()));
+                    Response.SetSpeech(false, false, "Hi there, we are looking to improve. Please grade today's workshop. ", "Please grade today's workshop. ");
                 });
             });
         }

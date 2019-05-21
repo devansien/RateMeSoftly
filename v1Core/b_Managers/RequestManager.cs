@@ -28,6 +28,16 @@ namespace RateMeSoftly
                 },
                 new RequestType
                 {
+                    name = CustomRequest.MenuIntent,
+                    type =typeof(MenuIntentHandler)
+                },
+                new RequestType
+                {
+                    name = CustomRequest.RateIntent,
+                    type = typeof(RateIntentHandler)
+                },
+                new RequestType
+                {
                     name = BuiltInRequest.SessionEndedRequest,
                     type = typeof(SessionEndedRequestHandler)
                 }
