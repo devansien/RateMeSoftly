@@ -22,6 +22,11 @@ namespace RateMeSoftly
             State state = new State()
             {
                 UserId = userId,
+                Ok = 0,
+                Bad = 0,
+                Good = 0,
+                VeryBad = 0,
+                VeryGood = 0,
                 NumPlayed = 0,
                 NumPrompted = 0,
                 Utterances = new List<Utterance>()

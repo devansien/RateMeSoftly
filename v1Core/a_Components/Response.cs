@@ -51,7 +51,7 @@ namespace RateMeSoftly
             response.Response.Directives.Add(directive);
         }
 
-        public void SetSpeech(bool endSession, bool isSsml, string speech, params string[] reprompts)
+        public void SetSpeech(bool? endSession, bool isSsml, string speech, params string[] reprompts)
         {
             string reprompt = string.Empty;
             if (reprompts != null && reprompts.Any())

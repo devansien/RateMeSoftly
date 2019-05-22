@@ -1,4 +1,5 @@
-﻿using Alexa.NET.APL.Components;
+﻿using Alexa.NET.APL;
+using Alexa.NET.APL.Components;
 using Alexa.NET.Response.APL;
 using System.Collections.Generic;
 
@@ -10,21 +11,22 @@ namespace RateMeSoftly
         {
             Text thankYouText = new Text
             {
-                Content = "Thank you for your participation",
-                FontSize = "40dp",
-                Width = DisplayManager.GetMaxWidth(),
-                Height = DisplayManager.GetMaxHeight(),
+                FontSize = "70dp",
                 Color = Style.White,
                 AlignSelf = Style.Center,
                 TextAlign = Style.Center,
-                TextAlignVertical = Style.Center
+                TextAlignVertical = Style.Center,
+                Width = DisplayManager.GetMaxWidth(),
+                Height = DisplayManager.GetMaxHeight(),
+                PaddingBottom = new AbsoluteDimension(50, "px"),
+                Content = "Thank you for your participation"
             };
 
             Container container = new Container
             {
+                JustifyContent = Style.Center,
                 Width = DisplayManager.GetMaxWidth(),
                 Height = DisplayManager.GetMaxHeight(),
-                JustifyContent = Style.Center,
                 Items = new List<APLComponent> { thankYouText }
             };
 

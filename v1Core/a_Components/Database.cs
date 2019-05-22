@@ -17,7 +17,7 @@ namespace RateMeSoftly
 
         public Database(string userId)
         {
-            UserId = "Static";
+            UserId = "ScoreBoard";
 
             string accessKey = Environment.GetEnvironmentVariable(SessionKey.DbAccessKey);
             string secretKey = Environment.GetEnvironmentVariable(SessionKey.DbSecretKey);

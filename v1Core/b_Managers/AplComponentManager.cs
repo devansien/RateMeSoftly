@@ -8,30 +8,25 @@ namespace RateMeSoftly
 {
     class AplComponentManager
     {
-        public static Container GetTouchWrappedItem(APLComponent component, string text, params string[] args)
+        public static Container GetTouchWrappedItem(APLComponent component, string text, string arg)
         {
-            List<string> arguments = new List<string>();
-
-            if (arguments != null && arguments.Any())
-                arguments = args.ToList();
-
             Text label = new Text
             {
                 Content = text,
-                FontSize = "20dp",
+                FontSize = "35dp",
                 Color = Style.White,
                 AlignSelf = Style.Center,
                 TextAlign = Style.Center,
                 TextAlignVertical = Style.Center,
                 Width = DisplayManager.GetWidth(0.15f),
-                Height = DisplayManager.GetHeight(0.1f)
+                Height = DisplayManager.GetHeight(0.15f)
             };
 
             TouchWrapper touchWrapper = new TouchWrapper
             {
                 OnPress = new SendEvent
                 {
-                    Arguments = arguments
+                    Arguments = new List<string> { arg }
                 },
                 AlignSelf = Style.Center
             };
