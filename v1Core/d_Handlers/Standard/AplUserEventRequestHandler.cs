@@ -11,13 +11,13 @@ namespace RateMeSoftly
             {
                 await Task.Run(() =>
                 {
+                    State.NumPlayed++;
                     UserEventRequest userRequest = Input.GetRequest().Request as UserEventRequest;
                     string inputValue = userRequest.Arguments[0];
                     RecordRating(inputValue);
-
-                    Response.SetDirectives(DirectiveManager.GetRenderDirective("ThankYouPage", string.Empty, b_ThankYouPage.GetPage()));
-                    Response.SetSpeech(null, false,
-                        "Thank you for your participation. See you soon. ",
+                    Response.SetDirectives(DirectiveManager.GetRenderDirective("RateMePage", string.Empty, a_RateMePage.GetPage()));
+                    Response.SetSpeech(null, true,
+                        "<say-as interpret-as=\"interjection\">gotcha, </say-as> thank you for your participation. ",
                         " ");
                 });
             });

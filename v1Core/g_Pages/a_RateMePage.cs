@@ -70,18 +70,18 @@ namespace RateMeSoftly
                 Position = Style.Absolute,
                 Width = DisplayManager.GetWidth(0.15f),
                 Height = DisplayManager.GetHeight(0.15f),
-                Right = new AbsoluteDimension(0, "px"),
-                Bottom = new AbsoluteDimension(30, "px"),
+                Right = new AbsoluteDimension(20, "px"),
+                Bottom = new AbsoluteDimension(5, "px"),
                 Source = "https://s3.amazonaws.com/sonnar-rate-me-softly/icon_sonnar.png"
             };
 
             Image amazonLogo = new Image
             {
                 Position = Style.Absolute,
-                Width = DisplayManager.GetWidth(0.15f),
-                Height = DisplayManager.GetHeight(0.15f),
-                Left = new AbsoluteDimension(0, "px"),
-                Bottom = new AbsoluteDimension(30, "px"),
+                Width = DisplayManager.GetWidth(0.18f),
+                Height = DisplayManager.GetHeight(0.18f),
+                Left = new AbsoluteDimension(20, "px"),
+                Bottom = new AbsoluteDimension(0, "px"),
                 Source = "https://s3.amazonaws.com/sonnar-rate-me-softly/icon_amazon.png"
             };
 
