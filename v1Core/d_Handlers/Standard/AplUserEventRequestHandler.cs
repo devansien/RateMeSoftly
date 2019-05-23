@@ -19,9 +19,9 @@ namespace RateMeSoftly
                     RecordRating(inputValue);
                     string speechcon = GetSpeechcon();
                     Response.SetDirectives(DirectiveManager.GetRenderDirective("RateMePage", string.Empty, a_RateMePage.GetPage()));
-                    Response.SetSpeech(null, true,
+                    Response.SetSpeech(false, true,
                         $"<say-as interpret-as=\"interjection\">{speechcon}, </say-as> thank you for your participation. <audio src=\"https://s3.amazonaws.com/sonnar-rate-me-softly/230silence.mp3\"/>",
-                        "<audio src=\"https://s3.amazonaws.com/sonnar-rate-me-softly/230silence.mp3\"/>");
+                        " ");
                 });
             });
         }
