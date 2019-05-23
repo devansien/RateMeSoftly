@@ -45,6 +45,11 @@ namespace RateMeSoftly
                 {
                     name = BuiltInRequest.SessionEndedRequest,
                     type = typeof(SessionEndedRequestHandler)
+                },
+                new RequestType
+                {
+                    name = BuiltInRequest.StopIntent,
+                    type = typeof(StopIntentHandler)
                 }
             };
         }

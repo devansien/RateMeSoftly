@@ -1,4 +1,6 @@
 ﻿using Alexa.NET.APL;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace RateMeSoftly
@@ -15,10 +17,11 @@ namespace RateMeSoftly
                     UserEventRequest userRequest = Input.GetRequest().Request as UserEventRequest;
                     string inputValue = userRequest.Arguments[0];
                     RecordRating(inputValue);
+                    string speechcon = GetSpeechcon();
                     Response.SetDirectives(DirectiveManager.GetRenderDirective("RateMePage", string.Empty, a_RateMePage.GetPage()));
                     Response.SetSpeech(null, true,
-                        "<say-as interpret-as=\"interjection\">gotcha, </say-as> thank you for your participation. ",
-                        " ");
+                        $"<say-as interpret-as=\"interjection\">{speechcon}, </say-as> thank you for your participation. <audio src=\"https://s3.amazonaws.com/sonnar-rate-me-softly/230silence.mp3\"/>",
+                        "<audio src=\"https://s3.amazonaws.com/sonnar-rate-me-softly/230silence.mp3\"/>");
                 });
             });
         }
@@ -46,6 +49,18 @@ namespace RateMeSoftly
                     State.VeryGood++;
                     break;
             }
+        }
+
+        string GetSpeechcon()
+        {
+            Random rand = new Random();
+            List<string> speechcons = new List<string>
+            {
+                "bam", "bingo", "bravo", "cheers", "dynomite", "hurray", "okey dokey",
+                "ooh la la", "wahoo", "well done", "woo hoo", "yay"
+            };
+
+            return speechcons[rand.Next(speechcons.Count)];
         }
     }
 }

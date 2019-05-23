@@ -12,9 +12,9 @@ namespace RateMeSoftly
                 {
                     State.NumPrompted++;
 
-                    Response.SetSpeech(false, false,
-                        "Sorry, I didn't understand. Please rate us using one of the followings. Very good, good, okay, bad, and very bad. ",
-                        "Please rate us using one of the followings. Very good, good, okay, bad, and very bad. ");
+                    Response.SetSpeech(false, true,
+                        "Sorry, I didn't understand. Please rate us using one of the followings. Very good, good, okay, bad, and very bad. <audio src=\"https://s3.amazonaws.com/sonnar-rate-me-softly/230silence.mp3\"/>",
+                        "Please rate us using one of the followings. Very good, good, okay, bad, and very bad. <audio src=\"https://s3.amazonaws.com/sonnar-rate-me-softly/230silence.mp3\"/>");
                 });
             });
         }
