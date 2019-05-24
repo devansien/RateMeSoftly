@@ -1,6 +1,7 @@
 ﻿using Alexa.NET.APL;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace RateMeSoftly
@@ -14,6 +15,15 @@ namespace RateMeSoftly
                 await Task.Run(() =>
                 {
                     State.NumPlayed++;
+
+                    string breakText = "<break time=\"10s\"/>";
+                    string reprompt = " ";
+
+                    StringBuilder sb = new StringBuilder();
+                    sb.Append(reprompt);
+                    for (int i = 0; i < 30; i++)
+                        sb.Append(breakText);
+
                     UserEventRequest userRequest = Input.GetRequest().Request as UserEventRequest;
                     string inputValue = userRequest.Arguments[0];
                     RecordRating(inputValue);
@@ -21,7 +31,7 @@ namespace RateMeSoftly
                     Response.SetDirectives(DirectiveManager.GetRenderDirective("RateMePage", string.Empty, a_RateMePage.GetPage()));
                     Response.SetSpeech(false, true,
                         $"<say-as interpret-as=\"interjection\">{speechcon}, </say-as> thank you for your participation. <audio src=\"https://s3.amazonaws.com/sonnar-rate-me-softly/230silence.mp3\"/>",
-                        " ");
+                        sb.ToString());
                 });
             });
         }
